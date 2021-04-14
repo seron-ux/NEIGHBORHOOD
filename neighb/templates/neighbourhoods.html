@@ -17,13 +17,13 @@
 
                 {%if request.user.profile.neighbourhood == hood %}
 
-                <a class="btn btn-default btn-small" href="{%url 'singlehood' hood.id%}">View Hood</a>
+                <a class="btn btn-secondary btn-small" href="{%url 'singlehood' hood.id%}">View Hood</a>
                 <a class="btn btn-danger" href="{%url 'leavehood' hood.id%}">Leave Hood</a>
 
                 {%elif not request.user.profile.neighbourhood%}
 
 
-                <a class="btn btn-default" href="{%url 'joinhood' hood.id%}">Join Hood</a>
+                <a class="btn btn-primary" href="{%url 'joinhood' hood.id%}">Join Hood</a>
 
                 {%endif%}
             </div>

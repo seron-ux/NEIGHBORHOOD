@@ -159,7 +159,7 @@ def newbiz(request):
 
     else:
         form = NewBizForm()
-    return render(request, 'newbiz.html', {"form": form})
+    return render(request, 'newbis.html', {"form": form})
 
 
 @login_required(login_url='/accounts/login/')
