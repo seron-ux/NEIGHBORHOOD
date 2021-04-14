@@ -7,10 +7,10 @@ from django.contrib.auth.models import User
 
 
 
-# class ProfileTest(TestCase):
-#     def setUp(self):
-#         self.peris = User(username = 'Peris',email = 'peris@gmail.com')
-#         self.peris = Profile(user = Self.peris,user_id = 1,bio = 'my hood', email='test@gmail.com',profile_pic = 'image.jpg',location='Nairobi', neighbourhood='caren')
+class ProfileTest(TestCase):
+    def setUp(self):
+        self.peris = User(username = 'Peris',email = 'peris@gmail.com')
+        self.peris = Profile(user = Self.peris,user_id = 1,bio = 'my hood', email='test@gmail.com',profile_pic = 'image.jpg',location='Nairobi', neighbourhood='caren')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.peris,Profile))
@@ -27,9 +27,9 @@ from django.contrib.auth.models import User
 
 
 
-class NeighbourhoodTestCase(TestCase):
-    def setUp(self):
-        self.new_ neighborhood= Project(name ='caren',location = 'Nairobi',image = 'trial.jpg',description = 'I like your my hood',user = peris,hood_logo= 'logo.jpeg', emergency_contact= '911',occupants_count ='10')
+# class NeighbourhoodTestCase(TestCase):
+#     def setUp(self):
+#         self.new_ neighborhood= Project(name ='caren',location = 'Nairobi',image = 'trial.jpg',description = 'I like your my hood',user = peris,hood_logo= 'logo.jpeg', emergency_contact= '911',occupants_count ='10')
 
 
     def test_save_image(self):
