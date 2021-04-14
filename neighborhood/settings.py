@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'neighborhood',
+    'neighb',
     'bootstrap4',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
