@@ -13,12 +13,12 @@ class SignUpForm(UserCreationForm):
 
 
 
-# class UserUpdateForm(forms.ModelForm):
-#     email = forms.EmailField()
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
 
-#     class Meta:
-#         model = User
-#         fields = ['username','email']
+    class Meta:
+        model = User
+        fields = ['username','email']
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
@@ -26,10 +26,10 @@ class ProfileUpdateForm(forms.ModelForm):
         fields =['profile_pic', 'bio']
 
 
-class NewHoodForm(forms.ModelForm):
-    class Meta:
-        model = Neighbourhood
-        exclude = ('admin',)
+# class NewHoodForm(forms.ModelForm):
+#     class Meta:
+#         model = Neighbourhood
+#         exclude = ('admin',)
 
 class EditHoodForm(forms.ModelForm):
     class Meta:
