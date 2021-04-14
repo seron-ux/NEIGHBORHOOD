@@ -27,9 +27,9 @@ class ProfileTest(TestCase):
 
 
 
-# class NeighbourhoodTestCase(TestCase):
-#     def setUp(self):
-#         self.new_ neighborhood= Project(name ='caren',location = 'Nairobi',image = 'trial.jpg',description = 'I like your my hood',user = peris,hood_logo= 'logo.jpeg', emergency_contact= '911',occupants_count ='10')
+class NeighbourhoodTestCase(TestCase):
+    def setUp(self):
+        self.new_ neighborhood= Project(name ='caren',location = 'Nairobi',image = 'trial.jpg',description = 'I like your my hood',user = peris,hood_logo= 'logo.jpeg', emergency_contact= '911',occupants_count ='10')
 
 
     def test_save_image(self):
@@ -56,8 +56,8 @@ class ProfileTest(TestCase):
 
 
 
-class BusinessTestCase(TestCase):
-    self.new_ neighborhood= Project(name = 'shop',user = 'Peris',email = 'test@gmail',neighborhood = 'Meru',descrption='This Hood')
+# class BusinessTestCase(TestCase):
+#     self.new_ neighborhood= Project(name = 'shop',user = 'Peris',email = 'test@gmail',neighborhood = 'Meru',descrption='This Hood')
 
 
     def test_save_image(self):
