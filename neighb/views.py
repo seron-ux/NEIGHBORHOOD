@@ -50,30 +50,30 @@ def profile(request):
     return render(request, 'profile.html', context)
 
 
-# @login_required(login_url='/accounts/login/')
-# def update_profile(request):
-#     current_user = request.user
-#     if request.method == 'POST':
+@login_required(login_url='/accounts/login/')
+def update_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
 
-#         user_form = UserUpdateForm(request.POST, instance=request.user)
-#         profile_form = ProfileUpdateForm(
-#             request.POST, request.FILES, instance=request.user)
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileUpdateForm(
+            request.POST, request.FILES, instance=request.user)
 
-#         if user_form.is_valid() and profile_form.is_valid():
-#             user_form.save()
-#             profile_form.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
 
-#             return redirect('profile')
+            return redirect('profile')
 
-#     else:
-#         user_form = UserUpdateForm(instance=request.user)
-#         profile_form = ProfileUpdateForm(instance=request.user)
+    else:
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=request.user)
 
-#         context = {
-#             'user_form': user_form,
-#             'profile_form': profile_form
+        context = {
+            'user_form': user_form,
+            'profile_form': profile_form
 
-#         }
+        }
 
     return render(request, 'update_profile.html', context)
 
@@ -84,22 +84,22 @@ def hood(request):
     return render(request, 'neighbourhoods.html', {"hoods": hoods})
 
 
-@login_required(login_url='/accounts/login/')
-def new_hood(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = NewHoodForm(request.POST, request.FILES)
-        if form.is_valid():
-            image = form.save(commit=False)
-            image.admin = current_user.profile
+# @login_required(login_url='/accounts/login/')
+# def new_hood(request):
+#     current_user = request.user
+#     if request.method == 'POST':
+#         form = NewHoodForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             image = form.save(commit=False)
+#             image.admin = current_user.profile
 
-            image.save()
+#             image.save()
 
-        return redirect('hood')
+#         return redirect('hood')
 
-    else:
-        form = NewHoodForm()
-    return render(request, 'new_hood.html', {"form": form})
+#     else:
+#         form = NewHoodForm()
+#     return render(request, 'new_hood.html', {"form": form})
 
 
 def edit_hood(request):
