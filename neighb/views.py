@@ -84,38 +84,38 @@ def hood(request):
     return render(request, 'neighbourhoods.html', {"hoods": hoods})
 
 
-# @login_required(login_url='/accounts/login/')
-# def new_hood(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = NewHoodForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             image = form.save(commit=False)
-#             image.admin = current_user.profile
-
-#             image.save()
-
-#         return redirect('hood')
-
-#     else:
-#         form = NewHoodForm()
-#     return render(request, 'new_hood.html', {"form": form})
-
-
-def edit_hood(request):
+@login_required(login_url='/accounts/login/')
+def new_hood(request):
     current_user = request.user
     if request.method == 'POST':
-        form = EditHoodForm(request.POST, request.FILES, instance=request.user)
+        form = NewHoodForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
             image.admin = current_user.profile
 
             image.save()
+
         return redirect('hood')
 
     else:
-        form = EditHoodForm()
-    return render(request, 'edit_hood.html', {'form': form})
+        form = NewHoodForm()
+    return render(request, 'new_hood.html', {"form": form})
+
+
+# def edit_hood(request):
+#     current_user = request.user
+#     if request.method == 'POST':
+#         form = EditHoodForm(request.POST, request.FILES, instance=request.user)
+#         if form.is_valid():
+#             image = form.save(commit=False)
+#             image.admin = current_user.profile
+
+#             image.save()
+#         return redirect('hood')
+
+#     else:
+#         form = EditHoodForm()
+#     return render(request, 'edit_hood.html', {'form': form})
 
 
 def joinhood(request, id):
