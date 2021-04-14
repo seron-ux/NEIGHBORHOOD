@@ -56,8 +56,8 @@ class NeighbourhoodTestCase(TestCase):
 
 
 
-# class BusinessTestCase(TestCase):
-#     self.new_ neighborhood= Project(name = 'shop',user = 'Peris',email = 'test@gmail',neighborhood = 'Meru',descrption='This Hood')
+class BusinessTestCase(TestCase):
+    self.new_ neighborhood= Project(name = 'shop',user = 'Peris',email = 'test@gmail',neighborhood = 'Meru',descrption='This Hood')
 
 
     def test_save_image(self):
