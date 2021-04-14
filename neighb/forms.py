@@ -26,10 +26,10 @@ class ProfileUpdateForm(forms.ModelForm):
         fields =['profile_pic', 'bio']
 
 
-# class NewHoodForm(forms.ModelForm):
-#     class Meta:
-#         model = Neighbourhood
-#         exclude = ('admin',)
+class NewHoodForm(forms.ModelForm):
+    class Meta:
+        model = Neighbourhood
+        exclude = ('admin',)
 
 class EditHoodForm(forms.ModelForm):
     class Meta:

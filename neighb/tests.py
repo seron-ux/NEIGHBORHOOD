@@ -7,10 +7,10 @@ from django.contrib.auth.models import User
 
 
 
-class ProfileTest(TestCase):
-    def setUp(self):
-        self.peris = User(username = 'Peris',email = 'peris@gmail.com')
-        self.peris = Profile(user = Self.peris,user_id = 1,bio = 'my hood', email='test@gmail.com',profile_pic = 'image.jpg',location='Nairobi', neighbourhood='caren')
+# class ProfileTest(TestCase):
+#     def setUp(self):
+#         self.peris = User(username = 'Peris',email = 'peris@gmail.com')
+#         self.peris = Profile(user = Self.peris,user_id = 1,bio = 'my hood', email='test@gmail.com',profile_pic = 'image.jpg',location='Nairobi', neighbourhood='caren')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.peris,Profile))
